@@ -94,3 +94,7 @@
 .xbbcode-table , .xbbcode-th, .xbbcode-td {
     border: 1px solid #666;
 }
+
+.xbbcode img {
+    max-width: 100%;
+}
