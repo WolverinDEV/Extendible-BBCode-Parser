@@ -735,7 +735,7 @@ namespace XBBCODE {
 
         errorQueue?: string[];
     }
-    export function process(config: {text: string, addInLineBreaks?: boolean, escapeHtml?: boolean, removeMisalignedTags?: boolean}) : ProcessResult {
+    export function process(config: {text: string, tag_whitelist?: string[], tag_blacklist?: string[], addInLineBreaks?: boolean, escapeHtml?: boolean, removeMisalignedTags?: boolean}) : ProcessResult {
         let result: ProcessResult = new ProcessResult();
         result.errorQueue = [];
 
