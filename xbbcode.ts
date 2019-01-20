@@ -721,11 +721,16 @@ namespace XBBCODE {
     };
 
     // API
-    export function addTags(newtags) {
-        var tag;
-        for (tag in newtags) {
-            tags[tag] = newtags[tag];
-        }
+    export interface TagFunction {
+        openTag(params: string, content: string) : string;
+        closeTag(params: string, content: string) : string;
+        restrictChildrenTo?: string[];
+        restrictParentsTo?: string[];
+    }
+
+    export function addTags(tags: {tag: string, function: TagFunction}[]) {
+        for(const tag of tags)
+            _tags[tag.tag] = tag.function;
         initTags();
     };
 
