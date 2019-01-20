@@ -728,7 +728,7 @@ namespace XBBCODE {
         restrictParentsTo?: string[];
     }
 
-    export function addTags(tags: {tag: string, function: TagFunction}[]) {
+    export function addTags(...tags: {tag: string, function: TagFunction}[]) {
         for(const tag of tags)
             _tags[tag.tag] = tag.function;
         initTags();
