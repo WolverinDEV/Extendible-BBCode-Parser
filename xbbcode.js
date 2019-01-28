@@ -2,12 +2,12 @@ typeof _translations !== "undefined" || (_translations = {})
 _translations["declared"] = _translations["declared"] || (_translations["declared"] = {})
 _translations["declared_files"] = _translations["declared_files"] || (_translations["declared_files"] = {})
 unique_translation_check: {
-    if (_translations["declared_files"]["28d78ca886a949833c534b42f94a59cdb773a2871b6d3f4ed5be5a8c505e4f30"] !== undefined) {
+    if (_translations["declared_files"]["840804238c06200f4dce5b9d33345ea3b2fe92c6aaba94a5465c2bd1b950b1fb"] !== undefined) {
         console.warn("This file has already been loaded!\nAre you executing scripts twice?")
         break unique_translation_check;
     }
     else
-        _translations["declared_files"]["28d78ca886a949833c534b42f94a59cdb773a2871b6d3f4ed5be5a8c505e4f30"] = "28d78ca886a949833c534b42f94a59cdb773a2871b6d3f4ed5be5a8c505e4f30"
+        _translations["declared_files"]["840804238c06200f4dce5b9d33345ea3b2fe92c6aaba94a5465c2bd1b950b1fb"] = "840804238c06200f4dce5b9d33345ea3b2fe92c6aaba94a5465c2bd1b950b1fb"
     /*Auto generated helper for testing if the translation keys are unique*/
     for (var { name: _i, path: _a } of []) {
         if (_translations["declared"][_i] !== undefined)
