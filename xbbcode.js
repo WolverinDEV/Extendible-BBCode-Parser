@@ -1,21 +1,3 @@
-typeof _translations !== "undefined" || (_translations = {})
-_translations["declared"] = _translations["declared"] || (_translations["declared"] = {})
-_translations["declared_files"] = _translations["declared_files"] || (_translations["declared_files"] = {})
-unique_translation_check: {
-    if (_translations["declared_files"]["840804238c06200f4dce5b9d33345ea3b2fe92c6aaba94a5465c2bd1b950b1fb"] !== undefined) {
-        console.warn("This file has already been loaded!\nAre you executing scripts twice?")
-        break unique_translation_check;
-    }
-    else
-        _translations["declared_files"]["840804238c06200f4dce5b9d33345ea3b2fe92c6aaba94a5465c2bd1b950b1fb"] = "840804238c06200f4dce5b9d33345ea3b2fe92c6aaba94a5465c2bd1b950b1fb"
-    /*Auto generated helper for testing if the translation keys are unique*/
-    for (var { name: _i, path: _a } of []) {
-        if (_translations["declared"][_i] !== undefined)
-            throw "Translation with generated name \"" + _i + "\" already exists!\nIt has been already defined here: " + _translations["declared"][_i] + "\nAttempted to redefine here: " + _a + "\nRegenerate and/or fix your program!";
-        else
-            _translations["declared"][_i] = _a
-    }
-}
 /*
 Copyright (C) 2011 Patrick Gillespie, http://patorjk.com/
 
