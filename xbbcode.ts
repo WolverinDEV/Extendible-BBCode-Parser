@@ -502,6 +502,14 @@ namespace XBBCODE {
                 return '</a>';
             }
         },
+        "hr": {
+            openTag: (params, content) => {
+                return "<hr/>";
+            },
+            closeTag: (params, content) => {
+                return "";
+            }
+        },
         /*
             The [*] tag is special since the user does not define a closing [/*] tag when writing their bbcode.
             Instead this module parses the code and adds the closing [/*] tag in for them. None of the _tags you
@@ -769,6 +777,7 @@ namespace XBBCODE {
         })) );
 
         config.text = fixStarTag(config.text); // add in closing _tags for the [*] tag
+        config.text = config.text.replace(/\[hr](?!.*\[\/hr])/gmi, "[hr][/hr]"); /* fix hr tag */
         config.text = addBbcodeLevels(config.text); // add in level metadata
 
         result.errorQueue = checkParentChildRestrictions("bbcode", config.text, -1, "", "", config.text);
