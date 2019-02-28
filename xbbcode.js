@@ -1,3 +1,21 @@
+typeof _translations !== "undefined" || (_translations = {})
+_translations["declared"] = _translations["declared"] || (_translations["declared"] = {})
+_translations["declared_files"] = _translations["declared_files"] || (_translations["declared_files"] = {})
+unique_translation_check: {
+    if (_translations["declared_files"]["de8dd38dcb920da28682e3bde17a15cce49a29dbe63752fd21250818b4d18700"] !== undefined) {
+        console.warn("This file has already been loaded!\nAre you executing scripts twice?")
+        break unique_translation_check;
+    }
+    else
+        _translations["declared_files"]["de8dd38dcb920da28682e3bde17a15cce49a29dbe63752fd21250818b4d18700"] = "de8dd38dcb920da28682e3bde17a15cce49a29dbe63752fd21250818b4d18700"
+    /*Auto generated helper for testing if the translation keys are unique*/
+    for (var { name: _i, path: _a } of []) {
+        if (_translations["declared"][_i] !== undefined)
+            throw "Translation with generated name \"" + _i + "\" already exists!\nIt has been already defined here: " + _translations["declared"][_i] + "\nAttempted to redefine here: " + _a + "\nRegenerate and/or fix your program!";
+        else
+            _translations["declared"][_i] = _a
+    }
+}
 /*
 Copyright (C) 2011 Patrick Gillespie, http://patorjk.com/
 
@@ -464,6 +482,14 @@ var XBBCODE;
                 return '</a>';
             }
         },
+        "hr": {
+            openTag: (params, content) => {
+                return "<hr/>";
+            },
+            closeTag: (params, content) => {
+                return "";
+            }
+        },
         /*
             The [*] tag is special since the user does not define a closing [/*] tag when writing their bbcode.
             Instead this module parses the code and adds the closing [/*] tag in for them. None of the _tags you
@@ -680,6 +706,7 @@ var XBBCODE;
         })))
             ;
         config.text = fixStarTag(config.text); // add in closing _tags for the [*] tag
+        config.text = config.text.replace(/\[hr](?!.*\[\/hr])/gmi, "[hr][/hr]"); /* fix hr tag */
         config.text = addBbcodeLevels(config.text); // add in level metadata
         result.errorQueue = checkParentChildRestrictions("bbcode", config.text, -1, "", "", config.text);
         result.html = parse(config);
